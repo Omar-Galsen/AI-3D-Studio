@@ -1,0 +1,11 @@
+# Render Blueprint: deploy the browser viewer as a static site.
+# AI inference is not connected; the Python backend is not deployed here.
+services:
+  - type: web
+    name: ai3d-studio
+    runtime: static
+    repo: https://github.com/Omar-Galsen/AI-3D-Studio
+    branch: main
+    buildCommand: echo "Static viewer ready"
+    staticPublishPath: .
+    autoDeployTrigger: commit
