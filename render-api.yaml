@@ -1,0 +1,19 @@
+# Optional separate Render FastAPI gateway service.
+# Deploy as a NEW Blueprint; do not replace the existing static website.
+services:
+  - type: web
+    name: ai3d-api
+    runtime: python
+    repo: https://github.com/Omar-Galsen/AI-3D-Studio
+    branch: main
+    buildCommand: pip install -r backend/requirements.txt
+    startCommand: uvicorn backend.app:app --host 0.0.0.0 --port $PORT
+    healthCheckPath: /api/health
+    autoDeployTrigger: commit
+    envVars:
+      - key: FRONTEND_ORIGIN
+        value: https://ai-3d-studio-cg4b.onrender.com
+      - key: GPU_WORKER_URL
+        sync: false
+      - key: GPU_WORKER_TOKEN
+        sync: false
