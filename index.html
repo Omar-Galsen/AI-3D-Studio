@@ -1,0 +1,9 @@
+<!doctype html>
+<html lang="en"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>AI3D Studio</title><link rel="stylesheet" href="./style.css"></head>
+<body><header><h1>AI3D <span>Studio</span></h1><small>Human Character Lab · Prototype</small></header>
+<main><section class="panel"><h2>Character concept</h2><label for="prompt">Describe your character</label><textarea id="prompt" rows="7" placeholder="A realistic adult explorer wearing a jacket and boots...">A realistic adult human character wearing casual clothing</textarea>
+<label for="build">Body proportions</label><select id="build"><option value="average">Average</option><option value="slim">Slim</option><option value="broad">Broad</option></select>
+<button id="preview">Update procedural preview</button><button id="generate" class="secondary">AI Generate (not connected)</button><p id="status" role="status">Procedural preview only. No AI mesh generation is connected.</p>
+<p class="note">The prompt is saved as a concept. It does not change the preview's clothing, identity or appearance.</p></section>
+<section class="viewer"><div class="toolbar"><strong>Interactive 3D Preview</strong><button id="export">Export GLB</button></div><div id="scene" aria-label="3D character preview"></div><p>Drag to rotate · Scroll to zoom · Export the mannequin as GLB</p></section></main>
+<script type="module" src="./main.js"></script></body></html>
